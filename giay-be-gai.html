@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUM HUM - Giày Bé Gái</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --pink-main: #FF80AB; --pink-bg: #FFF0F5; --orange-accent: #FFA726; --text-color: #4A4A4A; --bg-body: #FAFAFA; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Nunito', sans-serif; }
+        body { background-color: var(--bg-body); color: var(--text-color); }
+        header { background-color: #ffffff; box-shadow: 0 4px 15px rgba(255, 128, 171, 0.15); position: sticky; top: 0; z-index: 100; }
+        .header-container { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
+        .logo-box { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-box img { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--pink-main); object-fit: cover; }
+        .logo-text { font-size: 1.4rem; font-weight: 800; color: var(--pink-main); }
+        nav a { text-decoration: none; color: var(--text-color); font-weight: 700; margin: 0 15px; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: var(--pink-main); }
+        .header-actions { display: flex; align-items: center; gap: 15px; }
+        .search-bar { display: flex; background: #F0F0F0; border-radius: 20px; padding: 6px 15px; }
+        .search-bar input { border: none; background: transparent; outline: none; font-size: 0.9rem; width: 140px; }
+        .search-bar button { border: none; background: transparent; color: var(--pink-main); cursor: pointer; }
+        .cart-btn { position: relative; font-size: 1.3rem; color: var(--text-color); cursor: pointer; }
+        .cart-count { position: absolute; top: -8px; right: -10px; background: var(--orange-accent); color: white; font-size: 0.75rem; font-weight: bold; padding: 2px 6px; border-radius: 10px; }
+        .hero { background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 100%); padding: 50px 20px; text-align: center; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
+        .hero h1 { font-size: 2.3rem; color: #D81B60; margin-bottom: 10px; font-weight: 800; }
+        .products-container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+        .section-title { text-align: center; font-size: 1.8rem; font-weight: 800; margin-bottom: 35px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .product-card { background: white; border-radius: 20px; padding: 15px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.04); transition: transform 0.3s; }
+        .product-card:hover { transform: translateY(-8px); }
+        .product-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; margin-bottom: 15px; }
+        .product-card h3 { font-size: 1.05rem; margin-bottom: 8px; color: var(--text-color); }
+        .price { color: #D81B60; font-size: 1.2rem; font-weight: 800; margin-bottom: 15px; }
+        .btn-add { background-color: #D81B60; color: white; border: none; padding: 10px 20px; border-radius: 20px; font-weight: 700; cursor: pointer; width: 100%; transition: background 0.3s; }
+        .btn-add:hover { background-color: #AD1457; }
+        footer { text-align: center; padding: 25px 0; background-color: white; margin-top: 50px; border-top: 1px solid #eee; font-size: 0.9rem; color: #888; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-box">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=150" alt="HUM HUM Logo">
+                <span class="logo-text">HUM HUM</span>
+            </a>
+            <nav>
+                <a href="index.html">Trang chủ</a>
+                <a href="giay-be-trai.html">Giày Bé Trai</a>
+                <a href="giay-be-gai.html" class="active">Giày Bé Gái</a>
+            </nav>
+            <div class="header-actions">
+                <div class="search-bar"><input type="text" placeholder="Tìm kiếm..."><button><i class="fa-solid fa-magnifying-glass"></i></button></div>
+                <div class="cart-btn" onclick="addToCart()"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count" id="cart-count">0</span></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Bộ Sưu Tập Giày Bé Gái</h1>
+        <p>Điệu đà, xinh xắn và ngọt ngào dành cho các công chúa nhỏ của HUM HUM.</p>
+    </section>
+
+    <section class="products-container">
+        <h2 class="section-title">Sản Phẩm Cho Bé Gái </h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/g1.jpg" alt="Sneaker Hồng">
+                <h3>Sneaker HumHum Pastel Pink</h3>
+                <div class="price">350.000đ</div>
+                <button class="btn-add" onclick="addToCart()">Thêm vào giỏ</button>
+            </div>
+            <div class="product-card">
+                <img src="images/g2.jpg" alt="Thể Thao Tím">
+                <h3>Giày Thể Thao Tím Hoa Trắng</h3>
+                <div class="price">380.000đ</div>
+                <button class="btn-add" onclick="addToCart()">Thêm vào giỏ</button>
+            </div>
+            <div class="product-card">
+                <img src="images/g4.jpg" alt="Búp Bê">
+                <h3>Giày Búp Bê Đi Chơi Đính Nơ</h3>
+                <div class="price">320.000đ</div>
+                <button class="btn-add" onclick="addToCart()">Thêm vào giỏ</button>
+            </div>
+            <div class="product-card">
+                <img src="images/a1.jpg" alt="Công Chúa">
+                <h3>Giày Công Chúa Lấp Lánh</h3>
+                <div class="price">340.000đ</div>
+                <button class="btn-add" onclick="addToCart()">Thêm vào giỏ</button>
+            </div>
+            <div class="product-card">
+                <img src="images/g5.jpg" alt="Sandal Cúc">
+                <h3>Sandal Hoa Cúc Pastel Mùa Hè</h3>
+                <div class="price">270.000đ</div>
+                <button class="btn-add" onclick="addToCart()">Thêm vào giỏ</button>
+            </div>
+            <div class="product-card">
+                <img src="images/g6.jpg" alt="Sandal Hồng">
+                <h3>Sandal Đi Học Quai Ngang Hồng</h3>
+                <div class="price">250.000đ</div>
+                <button class="btn-add" onclick="addToCart()">Thêm vào giỏ</button>
+            </div>
+            <div class="product-card">
+                <img src="images/g7.jpg" alt="Tập Đi Hồng">
+                <h3>Giày Tập Đi Đế Mềm Thêu Nơ</h3>
+                <div class="price">220.000đ</div>
+                <button class="btn-add" onclick="addToCart()">Thêm vào giỏ</button>
+            </div>
+            <div class="product-card">
+                <img src="images/g8.jpg" alt="Dép Hồng">
+                <h3>Dép Lê Thỏ Hồng Dễ Thương</h3>
+                <div class="price">180.000đ</div>
+                <button class="btn-add" onclick="addToCart()">Thêm vào giỏ</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 <strong>HUM HUM - Giày dép shop</strong>. Tất cả quyền được bảo lưu.</p>
+        <p>Gmail: quynnhuong5522@gmail.com</p>
+        <p>Hotline: 0332046055</p>
+            <P>Địa chỉ: 611/28 Điện Biên Phủ, phường Vườn Lài, Thành phố Hồ Chí Minh.</P>
+    </footer>
+
+    <script>
+        let count = 0;
+        function addToCart() { count++; document.getElementById('cart-count').innerText = count; alert('Đã thêm sản phẩm vào giỏ hàng!'); }
+    </script>
+</body>
+</html>
